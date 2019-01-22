@@ -1,0 +1,3 @@
+#!/bin/sh
+#
+# jcc - compiles the .java files in src to .class files in bin
