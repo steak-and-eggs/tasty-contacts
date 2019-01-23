@@ -19,6 +19,7 @@ if [ "$1" = "build" ] ; then
   javac -d "bin" \
     "src/app/Switch.java" \
     "src/app/Config.java" \
+    "src/app/Contact.java" \
     "src/app/Module.java" \
     "src/app/ModAdd.java" \
     "src/app/ModDelete.java" \

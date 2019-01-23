@@ -69,6 +69,9 @@ public class ContactManager {
       }
     });
 
+    Contact con = new Contact("Alice", "(210)-123-4567");
+    System.out.println(con.toString());
+
     Scanner scan = new Scanner(System.in).useDelimiter("\n");
     String userin = null;
     // This while loop is the meat and potatoes of the program. Each option is
