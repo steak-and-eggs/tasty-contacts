@@ -10,7 +10,8 @@ public class ModView extends Module {
   }
 
   public void run(){
-
+    for (Contact person: this.contactList){
+      System.out.println(person);
+    }
   }
-
 }
