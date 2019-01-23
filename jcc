@@ -1,3 +1,27 @@
 #!/bin/sh
 #
 # jcc - compiles the .java files in src to .class files in bin
+
+if [ "$#" != 1 ] ; then
+  printf "Invalid arguments. Try jcc build to compile or jcc run to run.\n"
+fi
+
+if [ "$1" = "build" ] ; then
+
+  if [ ! -f "bin" ] ; then
+    mkdir "bin"
+    mkdir "bin/errtypes"
+    mkdir "bin/app"
+  done
+
+  javac -d "bin" \
+    "app/Switch.java" \
+    "app/ContactManager.java"
+
+elif [ "$2" = "run" ] ; then
+  cd "bin"
+  java -cp ".:app:" "ContactManager"
+  cd ..
+else
+  printf "Invalid argument: $1"
+fi
