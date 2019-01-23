@@ -19,6 +19,12 @@ if [ "$1" = "build" ] ; then
   javac -d "bin" \
     "src/app/Switch.java" \
     "src/app/Config.java" \
+    "src/app/Module.java" \
+    "src/app/ModAdd.java" \
+    "src/app/ModDelete.java" \
+    "src/app/ModExit.java" \
+    "src/app/ModSearch.java" \
+    "src/app/ModView.java" \
     "src/app/ContactManager.java"
 
   printf "Build complete.\n"
