@@ -6,6 +6,7 @@ public class ContactManager {
 
     Switch<String,Runnable> options = new Switch<>();
     System.out.println("Running...");
+    Config config = new Config();
   }
 
 }
