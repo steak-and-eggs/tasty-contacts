@@ -10,7 +10,7 @@ public class ModExit extends Module {
   }
 
   public void run(){
-    System.out.println("Goodbye.");
+    System.out.println("Goodbye!");
     System.exit(0);
   }
 

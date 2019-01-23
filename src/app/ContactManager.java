@@ -26,6 +26,15 @@ public class ContactManager {
     msg += "\n";
     System.out.print(msg);
   }
+  public static void contactsOptions(){
+    System.out.println(
+      "\n Hello! Please select from the options below: \n" +
+      "1 - View all contacts \n" +
+      "2 - Add new contact \n" +
+      "3 - Search contacts \n" +
+      "4 - Delete contact \n" +
+      "5 - Exit\n");
+  }
 
   public static void main(String[] args){
 
@@ -56,7 +65,7 @@ public class ContactManager {
 
     options.addDefault(new Runnable(){
       public void run(){
-        System.out.println("Option not specified.");
+        System.out.println("\nERROR: Option not specified.\n");
       }
     });
 
@@ -66,6 +75,7 @@ public class ContactManager {
     // runnable, so the match returns and runnable, which we run. The behavior
     // doesn't have to be specified, the object only needs to run.
     while(true){
+      contactsOptions();
       userin = scan.next();
       options.match(userin).run();
     }
