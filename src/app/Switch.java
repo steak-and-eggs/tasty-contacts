@@ -8,7 +8,7 @@ import java.util.HashMap;
   to runnable objects. Like a switch statement, it should default to behavior.
   If that default behavior is not specified, a null is returned.
 */
-public class Switch<T,U implements Runnable> {
+public class Switch<T,U> {
 
   private HashMap<T,U> self;
   private U def;
@@ -19,7 +19,7 @@ public class Switch<T,U implements Runnable> {
   }
 
   public void addCase(T key, U behavior){
-    self.add(option, behavior);
+    self.put(key, behavior);
   }
 
   public void addDefault(U behavior){

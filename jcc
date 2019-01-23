@@ -3,25 +3,29 @@
 # jcc - compiles the .java files in src to .class files in bin
 
 if [ "$#" != 1 ] ; then
-  printf "Invalid arguments. Try jcc build to compile or jcc run to run.\n"
+  printf "Invalid arguments.\nTry jcc build to compile or jcc run to run.\n"
 fi
 
 if [ "$1" = "build" ] ; then
 
-  if [ ! -f "bin" ] ; then
+  # make sure the target directories exist. If not, make them.
+  if [ ! -d "bin" ] ; then
     mkdir "bin"
     mkdir "bin/errtypes"
     mkdir "bin/app"
-  done
+  fi
 
+  # build the app package
   javac -d "bin" \
-    "app/Switch.java" \
-    "app/ContactManager.java"
+    "src/app/Switch.java" \
+    "src/app/ContactManager.java"
 
-elif [ "$2" = "run" ] ; then
+  printf "Build complete.\n"
+
+elif [ "$1" = "run" ] ; then
   cd "bin"
-  java -cp ".:app:" "ContactManager"
+  java -cp ".:app:" "app/ContactManager"
   cd ..
 else
-  printf "Invalid argument: $1"
+  printf "Invalid argument: $1\n"
 fi
