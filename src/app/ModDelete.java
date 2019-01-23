@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModDelete extends Module {
 
-  public ModDelete(ArrayList<String> cl, File cf){
+  public ModDelete(ArrayList<Contact> cl, File cf){
     super(cl, cf);
   }
 

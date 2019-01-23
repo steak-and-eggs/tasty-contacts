@@ -26,6 +26,7 @@ public class ContactManager {
     msg += "\n";
     System.out.print(msg);
   }
+
   public static void contactsOptions(){
     System.out.println(
       "\n Hello! Please select from the options below: \n" +
@@ -37,12 +38,23 @@ public class ContactManager {
   }
 
   public static void main(String[] args){
-
+    // display the welcome banner
     printWelcome();
+    // configure the program
     Config config = new Config();
+    // Instantiate the list of contacts and read it in.
+    // To read into the list, we'll use the contact reader class.
+    ArrayList<Contact> contactList = new ArrayList<>();
+    ContactReader conread = new ContactReader();
+    conread.readInto(config.getContacts(), contactList);
 
-    ArrayList<String> contactList = new ArrayList<>();
+    // this loop just prints the contacts
+    // we'll get rid of it as time goes on
+    for(Contact con : contactList){
+      System.out.println(con.toString());
+    }
 
+    // construct all the modules
     Runnable view = new ModView(contactList, config.getContacts());
     Runnable add = new ModAdd(contactList, config.getContacts());
     Runnable search = new ModSearch(contactList, config.getContacts());
@@ -50,28 +62,28 @@ public class ContactManager {
     Runnable exit = new ModExit(contactList, config.getContacts());
 
     // Add the modules to the options
+    // Many keys match to one option
     Switch<String,Runnable> options = new Switch<>();
+    // The short case
     options.addCase("1", view);
     options.addCase("2", add);
     options.addCase("3", search);
     options.addCase("4", delete);
     options.addCase("5", exit);
-
+    // The long case
     options.addCase("view", view);
     options.addCase("add", add);
     options.addCase("search", search);
     options.addCase("delete", delete);
     options.addCase("exit", exit);
-
+    // the default case
     options.addDefault(new Runnable(){
       public void run(){
         System.out.println("\nERROR: Option not specified.\n");
       }
     });
 
-    Contact con = new Contact("Alice", "(210)-123-4567");
-    System.out.println(con.toString());
-
+    // Read the user input based with the newline as a delimiter
     Scanner scan = new Scanner(System.in).useDelimiter("\n");
     String userin = null;
     // This while loop is the meat and potatoes of the program. Each option is

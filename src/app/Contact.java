@@ -27,11 +27,7 @@ public class Contact {
   }
 
   public String toString(){
-    return ""
-    + "{\n"
-    + "\t\"name\":\"" + name + "\"\n"
-    + "\t\"number\":\"" + number + "\"\n"
-    + "}\n";
+    return name + "," + number + ",";
   }
 
 }

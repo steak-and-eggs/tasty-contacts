@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModView extends Module {
 
-  public ModView(ArrayList<String> cl, File cf){
+  public ModView(ArrayList<Contact> cl, File cf){
     super(cl, cf);
   }
 

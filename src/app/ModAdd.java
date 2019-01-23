@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModAdd extends Module {
 
-  public ModAdd(ArrayList<String> cl, File cf){
+  public ModAdd(ArrayList<Contact> cl, File cf){
     super(cl, cf);
   }
 

@@ -30,6 +30,9 @@ public class Config {
         e.printStackTrace();
       }
     }
+    else {
+      this.contacts = new File(dataPath + "/contacts.txt");
+    }
   }
 
   public File getContacts(){

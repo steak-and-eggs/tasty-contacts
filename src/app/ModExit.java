@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModExit extends Module {
 
-  public ModExit(ArrayList<String> cl, File cf){
+  public ModExit(ArrayList<Contact> cl, File cf){
     super(cl, cf);
   }
 

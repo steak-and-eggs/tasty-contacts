@@ -5,7 +5,7 @@ import java.io.File;
 
 public class ModSearch extends Module {
 
-  public ModSearch(ArrayList<String> cl, File cf){
+  public ModSearch(ArrayList<Contact> cl, File cf){
     super(cl, cf);
   }
 

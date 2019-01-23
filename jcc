@@ -20,6 +20,7 @@ if [ "$1" = "build" ] ; then
     "src/app/Switch.java" \
     "src/app/Config.java" \
     "src/app/Contact.java" \
+    "src/app/ContactReader.java" \
     "src/app/Module.java" \
     "src/app/ModAdd.java" \
     "src/app/ModDelete.java" \

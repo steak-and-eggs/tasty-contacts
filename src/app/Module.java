@@ -5,10 +5,10 @@ import java.io.File;
 
 public abstract class Module implements Runnable {
 
-  protected ArrayList<String> contactList;
+  protected ArrayList<Contact> contactList;
   protected File config;
 
-  public Module(ArrayList<String> cl, File cf){
+  public Module(ArrayList<Contact> cl, File cf){
     this.contactList = cl;
     this.config = cf;
   }
