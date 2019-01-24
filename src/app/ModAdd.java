@@ -15,11 +15,28 @@ public class ModAdd extends Module {
 
   public void run(){
     System.out.println("\nEnter a name:");
-    String newContactName = contactScanner.next();
+    String name = contactScanner.next();
+
     System.out.println("\nEnter a phone number:");
-    String newContactNumber = contactScanner.next();
-    System.out.println("\nName: " + newContactName +"\nNumber: " + newContactNumber);
-    this.contactList.add(new Contact(newContactName, newContactNumber));
+    String number = contactScanner.next();
+
+    System.out.println("\nDEBUG:" +
+      "\n\tName: " + name +
+      "\n\tNumber: " + sanitizeNumber(number) +
+      "\n"
+    );
+
+    this.contactList.add(new Contact(name, sanitizeNumber(number)));
+  }
+
+  private String sanitizeNumber(String number){
+    String clean = "";
+    for(char ch : number.toCharArray()){
+      if(ch >= '0' && ch <= '9'){
+        clean += ch;
+      }
+    }
+    return clean;
   }
 
 }

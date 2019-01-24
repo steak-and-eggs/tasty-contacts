@@ -1,1 +1,5 @@
-Alice,2105556677,
+Alice Alderson,1234445577,
+Bob Bedford,0,
+Chalie Castle,1234458899,
+David,2104457789,
+Edison Einstein,0,
