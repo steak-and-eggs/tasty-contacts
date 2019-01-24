@@ -18,14 +18,16 @@ public class ModDelete extends Module {
     for (Contact person: this.contactList){
       if (deleteName.equalsIgnoreCase(person.getName())){
         break;
-        }
-        i++;
+      } else if (!deleteName.equalsIgnoreCase(person.getName())){
+        System.out.printf("Sorry, %s could not be located.", deleteName);
       }
-      try {
-        contactList.remove(i);
-        System.out.println("Contact removed");
-      } catch (NullPointerException e){
-        e.printStackTrace();
-      }
+      i++;
+    }
+    try {
+      contactList.remove(i);
+      System.out.println("Contact removed");
+    } catch (NullPointerException e){
+      e.printStackTrace();
     }
   }
+}

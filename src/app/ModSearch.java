@@ -13,8 +13,16 @@ public class ModSearch extends Module {
 
   public void run(){
     System.out.println("Enter a contact name: ");
-
-
+    String searchName = searchScanner.next().trim().toLowerCase();
+    int i = 0;
+    for (Contact person: this.contactList){
+      if (searchName.equalsIgnoreCase(person.getName())){
+        System.out.println(person);
+        break;
+      } else if (searchName.equalsIgnoreCase(person.getName())){
+        System.out.printf("Sorry, %s could not be located.", searchName);
+        }
+      i++;
+    }
   }
-
 }
