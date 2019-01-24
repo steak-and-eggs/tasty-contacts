@@ -28,12 +28,12 @@ public class ContactManager {
   }
 
   public static void contactsOptions(){
-    System.out.println(
-      "\n Hello! Please select from the options below: \n" +
-      "1 - View all contacts \n" +
-      "2 - Add new contact \n" +
-      "3 - Search contacts \n" +
-      "4 - Delete contact \n" +
+    System.out.print(
+      "\nPlease select from the options below:\n" +
+      "1 - View all contacts\n" +
+      "2 - Add new contact\n" +
+      "3 - Search contacts\n" +
+      "4 - Delete contact\n" +
       "5 - Exit\n");
   }
 
@@ -47,12 +47,6 @@ public class ContactManager {
     ArrayList<Contact> contactList = new ArrayList<>();
     ContactReader conread = new ContactReader();
     conread.readInto(config.getContacts(), contactList);
-
-    // this loop just prints the contacts
-    // we'll get rid of it as time goes on
-    for(Contact con : contactList){
-      System.out.println(con.toString());
-    }
 
     // construct all the modules
     Runnable view = new ModView(contactList, config.getContacts());
