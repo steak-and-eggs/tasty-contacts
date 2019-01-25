@@ -26,7 +26,14 @@ public class ModAdd extends Module {
       "\n"
     );
 
-    this.contactList.add(new Contact(name, sanitizeNumber(number)));
+    try {
+      this.contactList.add(new Contact(name, sanitizeNumber(number)));
+    } catch(NumberFormatException e){
+      System.out.println("Error: invalid number: " +
+        sanitizeNumber(number) +
+        "\nPlease enter a phone number with 10 digits."
+      );
+    }
   }
 
   private String sanitizeNumber(String number){

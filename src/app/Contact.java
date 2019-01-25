@@ -6,6 +6,11 @@ public class Contact {
   private String number;
 
   public Contact(String nm, String num){
+
+    if(num.length() != 10){
+      throw new NumberFormatException();
+    }
+
     this.name = nm;
     this.number = num;
   }
