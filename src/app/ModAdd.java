@@ -26,14 +26,7 @@ public class ModAdd extends Module {
       "\n"
     );
 
-    try {
-      this.contactList.add(new Contact(name, sanitizeNumber(number)));
-    } catch(NumberFormatException e){
-      System.out.format("Sorry, the phone number %s cannot be processed.\n",
-        number);
-      System.out.println("Please try only entering under the following format: (###)-###-####");
-    }
-
+    this.contactList.add(new Contact(name, sanitizeNumber(number)));
   }
 
   private String sanitizeNumber(String number){

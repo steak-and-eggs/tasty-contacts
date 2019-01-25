@@ -3,13 +3,11 @@ package app;
 public class Contact {
 
   private String name;
-  private int number;
+  private String number;
 
-  public Contact(String nm, String num)
-    throws NumberFormatException
-  {
+  public Contact(String nm, String num){
     this.name = nm;
-    this.number = Integer.parseInt(num);
+    this.number = num;
   }
 
   public String toString(){
