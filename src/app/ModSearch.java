@@ -1,5 +1,6 @@
 package app;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.io.File;
 import java.util.Scanner;
@@ -12,17 +13,27 @@ public class ModSearch extends Module {
   }
 
   public void run(){
+
     System.out.println("Enter a contact name: ");
-    String searchName = searchScanner.next().trim().toLowerCase();
-    int i = 0;
-    for (Contact person: this.contactList){
-      if (searchName.equalsIgnoreCase(person.getName())){
-        System.out.println(person);
-        break;
-      } else if (searchName.equalsIgnoreCase(person.getName())){
-        System.out.printf("Sorry, %s could not be located.", searchName);
-        }
-      i++;
+    String query = searchScanner.next().toLowerCase();
+    List<Contact> results = new ArrayList<Contact>();
+
+    String current = null;
+    for(Contact person: this.contactList){
+      current = person.getName().toLowerCase();
+
+      if(current.contains(query)){
+        results.add(person);
+      }
+    }
+
+    if(results.size() == 0){
+      System.out.format("Sorry, no person with the name: %s exists.\n", query);
+    }
+    else{
+      for(Contact person: results){
+        System.out.println(person.toString());
+      }
     }
   }
 }
